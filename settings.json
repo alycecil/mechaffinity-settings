@@ -166,16 +166,21 @@
   "chassisAffinities": [
     {
       "chassisNames": [
-        "chrPrfMech_fleaBase-001",
-        "chrPrfMech_firestarterBase-001",
-        "chrPrfMech_fleaBase-001_15",
         "chrPrfMech_fleaBase-001_20",
         "chrPrfMech_locustBase-001_20",
         "chrPrfMech_cicadaBase-001_40",
         "chrPrfMech_trebuchetBase-001_50",
         "chrPrfMech_thunderboltBase-001_65",
         "chrPrfMech_zeusBase-001_80",
-        "chrPrfMech_bullsharkBase-001_95"
+        "chrPrfMech_bullsharkBase-001_95",
+        "chrprfmech_anubisbase-001_30",
+        "chrprfmech_clintbase-001_40",
+        "chrprfmech_fafnirbase-001_100",
+        "chrprfmech_yeomanbase-001_60",
+        "chrprfmech_cougarbase-001_35",
+        "chrprfmech_ebonjaguarbase-001_65",
+        "chrprfmech_kodiakbase-001_100",
+        "chrprfmech_warhawkbase-001_85"
       ],
       "affinityLevels": [
         {
@@ -255,24 +260,35 @@
     },
     {
       "chassisNames": [
-        "chrPrfMech_commandoBase-001_25",
-        "chrprfmech_urbiebase-001_30",
-        "chrPrfMech_ravenBase-001_35",
-        "chrPrfMech_vulcanBase-001_40",
-        "chrPrfMech_warhammerBase-001_70"
+        "chrPrfMech_fleaBase-001_15",
+        "chrprfmech_locustiicbase-001_25",
+        "chrprfmech_mongoosebase-001_25",
+        "chrprfmech_osirisbase-001_30",
+        "chrprfmech_owensbase-001_35",
+        "chrprfmech_roughneckbase-001_65",
+        "chrprfmech_talosbase-001_50",
+        "chrprfmech_valkyrieiibase-001_60",
+        "chrPrfMech_waspHotD-001_20",
+        "chrPrfMech_adderbase-001_35",
+        "chrprfmech_direwolfbase-001_100",
+        "chrprfmech_medusabase-001_50",
+        "chrprfmech_mistlynxbase-001_25",
+        "chrPrfMech_novacatbase-001_70",
+        "chrprfmech_piranhabase-001_20",
+        "chrprfmech_sunspiderbase-001_70"
       ],
       "affinityLevels": [
         {
           "missionsRequired": 15,
-          "levelName": "Evasive",
-          "decription": "Shrinks The Mech's Target Even Further! (+2 defense)",
+          "levelName": "Speed Force",
+          "decription": "Move With Incredible Speed! (+10% walk & sprint & jump speed)",
           "effectData": [
             {
               "Description": {
-                "Details": "The pilot's incredible skill with this mech makes it even harder to hit the mech.",
+                "Details": "The pilot's incredible skill with this mech improves its walk & sprinting speed by 15%.",
                 "Icon": "UixSvgIcon_specialEquip_System",
-                "Id": "StatusEffect-Affinity-NarrowProfile",
-                "Name": "Mech Affinity Defensive Boost"
+                "Id": "StatusEffect-Affinity-EasyToPilotWalk",
+                "Name": "Mech Affinity Sprint Boost"
               },
               "durationData": {
                 "duration": -1,
@@ -283,9 +299,75 @@
               "statisticData": {
                 "additionalRules": "NotSet",
                 "modType": "System.Single",
-                "modValue": "2.0",
-                "operation": "Float_Add",
-                "statName": "ToHitThisActor",
+                "modValue": "1.1",
+                "operation": "Float_Multiply",
+                "statName": "WalkSpeed",
+                "targetAmmoCategory": "NotSet",
+                "targetCollection": "NotSet",
+                "targetWeaponCategory": "NotSet",
+                "targetWeaponSubType": "NotSet",
+                "targetWeaponType": "NotSet"
+              },
+              "targetingData": {
+                "effectTargetType": "Creator",
+                "effectTriggerType": "Passive",
+                "hideApplicationFloatie": true,
+                "showInStatusPanel": true,
+                "showInTargetPreview": true
+              }
+            },
+            {
+              "Description": {
+                "Details": "The pilot's incredible skill with this mech improves its sprinting speed by 15%.",
+                "Icon": "UixSvgIcon_specialEquip_System",
+                "Id": "StatusEffect-Affinity-EasyToPilotRun",
+                "Name": "Mech Affinity Sprint Boost"
+              },
+              "durationData": {
+                "duration": -1,
+                "stackLimit": -1
+              },
+              "effectType": "StatisticEffect",
+              "nature": "Buff",
+              "statisticData": {
+                "additionalRules": "NotSet",
+                "modType": "System.Single",
+                "modValue": "1.1",
+                "operation": "Float_Multiply",
+                "statName": "RunSpeed",
+                "targetAmmoCategory": "NotSet",
+                "targetCollection": "NotSet",
+                "targetWeaponCategory": "NotSet",
+                "targetWeaponSubType": "NotSet",
+                "targetWeaponType": "NotSet"
+              },
+              "targetingData": {
+                "effectTargetType": "Creator",
+                "effectTriggerType": "Passive",
+                "hideApplicationFloatie": true,
+                "showInStatusPanel": false,
+                "showInTargetPreview": false
+              }
+            },
+            {
+              "Description": {
+                "Details": "The pilot's incredible skill with this mech makes it extremely mobile with its jump jets.",
+                "Icon": "UixSvgIcon_specialEquip_System",
+                "Id": "StatusEffect-Affinity-NimbleJumper",
+                "Name": "Mech Affinity Jumping Boost"
+              },
+              "durationData": {
+                "duration": -1,
+                "stackLimit": -1
+              },
+              "effectType": "StatisticEffect",
+              "nature": "Buff",
+              "statisticData": {
+                "additionalRules": "NotSet",
+                "modType": "System.Single",
+                "modValue": "1.1",
+                "operation": "Float_Multiply",
+                "statName": "JumpDistanceMultiplier",
                 "targetAmmoCategory": "NotSet",
                 "targetCollection": "NotSet",
                 "targetWeaponCategory": "NotSet",
@@ -306,11 +388,23 @@
     },
     {
       "chassisNames": [
-        "chrPrfMech_warhammerBase-001",
-        "chrPrfMech_vulcanBase-001",
-        "chrPrfMech_marauderBase-001",
-        "chrPrfMech_cataphractBase-001",
-        "chrPrfMech_centurionBase-001"
+        "chrPrfMech_commandoBase-001_25",
+        "chrprfmech_urbiebase-001_30",
+        "chrPrfMech_ravenBase-001_35",
+        "chrPrfMech_vulcanBase-001_40",
+        "chrPrfMech_warhammerBase-001_70",
+        "chrprfmech_argusbase-001_60",
+        "chrprfmech_bushwackerbase-001_55",
+        "chrprfmech_impbase-001_100",
+        "chrprfmech_jenneriicbase-001_35",
+        "chrprfmech_merlinbase-001_60",
+        "chrprfmech_ostrochotd-001_60",
+        "chrprfmech_valiantbase-001_30",
+        "chrprfmech_wolfhoundbase-001_35",
+        "chrprfmech_blackpythonbase-001_75",
+        "chrprfmech_linebackerbase-001_65",
+        "chrprfmech_stonerhinobase-001_100",
+        "chrprfmech_warhammeriicbase-001_80"
       ],
       "affinityLevels": [
         {
@@ -363,7 +457,12 @@
         "chrPrfMech_assassinBase-001_40",
         "chrPrfMech_catapultBase-001_65",
         "chrPrfMech_grasshopperBase-001_70",
-        "chrPrfMech_highlanderBase-001_90"
+        "chrPrfMech_highlanderBase-001_90",
+        "chrprfmech_highlanderiicbase-001_90",
+        "chrprfmech_dervishbase-001_55",
+        "chrprfmech_hellspawnbase-001_45",
+        "chrprfmech_hornetbase-001_20",
+        "chrPrfMech_shadowcatbase-001_45"
       ],
       "affinityLevels": [
         {
@@ -415,7 +514,10 @@
         "chrPrfMech_crabBase-001_50",
         "chrPrfMech_wolverineBase-001_55",
         "chrPrfMech_quickdrawBase-001_60",
-        "chrPrfMech_riflemanBase-001_60"
+        "chrPrfMech_riflemanBase-001_60",
+        "chrprfmech_riflemaniicbase-001_65",
+        "chrprfmech_icarusiibase-001_40",
+        "chrprfmech_novabase-001_50"
       ],
       "affinityLevels": [
         {
@@ -462,17 +564,26 @@
     },
     {
       "chassisNames": [
-        "chrPrfMech_highlander_SLDFBase-001",
-        "chrPrfMech_griffinBase-001",
-        "chrPrfMech_crabBase-001",
-        "chrPrfMech_blackknightBase-001",
-        "chrPrfMech_battlemasterBase-001"
+        "chrPrfMech_annihilator_BlackWidowBase-001_100",
+        "chrprfmech_cephalusbase-001_25",
+        "chrprfmech_championbase-001_60",
+        "chrprfmech_chargerhotd-001_80",
+        "chrprfmech_rtcorsair4base-001_95",
+        "chrprfmech_crusaderhotd-001_65",
+        "chrPrfMech_hatamotochiBase-001_80",
+        "chrprfmech_nightstarbase-001_95",
+        "chrPrfMech_rifleman_BHABase-001_60",
+        "chrprfmech_titaniibase-001_100",
+        "chrprfmech_zeusxbase-001_80",
+        "chrprfmech_arcticcheetahbase-001_30",
+        "chrprfmech_supernovabase-001_90",
+        "chrprfmech_turkinabase-001_95"
       ],
       "affinityLevels": [
         {
           "missionsRequired": 5,
-          "levelName": "Star League Lance",
-          "decription": "Great at Keeping Morale High! (+3 Morale Gain)",
+          "levelName": "Rare Mech Lancer",
+          "decription": "Great at Keeping Morale High! (+1 Morale Gain)",
           "effectData": [
             {
               "Description": {
@@ -490,7 +601,7 @@
               "statisticData": {
                 "additionalRules": "NotSet",
                 "modType": "System.Int32",
-                "modValue": "3",
+                "modValue": "1",
                 "operation": "Int_Add",
                 "statName": "MoraleBonusGain",
                 "targetAmmoCategory": "NotSet",
@@ -511,7 +622,7 @@
         },
         {
           "missionsRequired": 15,
-          "levelName": "LosTek Expertise",
+          "levelName": "LosTek Targeting Expertise",
           "decription": "Fire weapons at up to three separate targets",
           "effectData": [
             {
@@ -536,11 +647,113 @@
     },
     {
       "chassisNames": [
+        "chrprfmech_chargerpbhotd-001_75",
+        "chrprfmech_hatamotochisam-001_80",
+        "chrprfmech_redreaperbase-001_75",
+        "chrprfmech_templarbase-001_85",
+        "chrprfmech_thanatosbase-001_75"
+      ],
+      "affinityLevels": [
+        {
+          "missionsRequired": 5,
+          "levelName": "Rare Mech Lancer",
+          "decription": "Great at Keeping Morale High! (+1 Morale Gain)",
+          "effectData": [
+            {
+              "Description": {
+                "Details": "The pilot's incredible skill with this mech improves its morale boost by 3.",
+                "Icon": "UixSvgIcon_specialEquip_System",
+                "Id": "StatusEffect-Affinity-MoraleBoost",
+                "Name": "Mech Affinity Morale Boost"
+              },
+              "durationData": {
+                "duration": -1,
+                "stackLimit": -1
+              },
+              "effectType": "StatisticEffect",
+              "nature": "Buff",
+              "statisticData": {
+                "additionalRules": "NotSet",
+                "modType": "System.Int32",
+                "modValue": "1",
+                "operation": "Int_Add",
+                "statName": "MoraleBonusGain",
+                "targetAmmoCategory": "NotSet",
+                "targetCollection": "NotSet",
+                "targetWeaponCategory": "NotSet",
+                "targetWeaponSubType": "NotSet",
+                "targetWeaponType": "NotSet"
+              },
+              "targetingData": {
+                "effectTargetType": "Creator",
+                "effectTriggerType": "Passive",
+                "hideApplicationFloatie": true,
+                "showInStatusPanel": true,
+                "showInTargetPreview": false
+              }
+            }
+          ]
+        },
+        {
+          "missionsRequired": 15,
+          "levelName": "Flawless Brawler",
+          "decription": "Has Boosted Melee Damage (+10% Melee Damage)",
+          "effectData": [
+            {
+              "Description": {
+                "Details": "The pilot's incredible skill with this mech improves its melee damage by 10%.",
+                "Icon": "UixSvgIcon_specialEquip_System",
+                "Id": "StatusEffect-Affinity-MeleeDamage",
+                "Name": "Mech Affinity Melee Damage Boost"
+              },
+              "durationData": {
+                "duration": -1,
+                "stackLimit": -1
+              },
+              "effectType": "StatisticEffect",
+              "nature": "Buff",
+              "statisticData": {
+                "additionalRules": "NotSet",
+                "modType": "System.Single",
+                "modValue": "1.1",
+                "operation": "Float_Multiply",
+                "statName": "DamagePerShot",
+                "targetAmmoCategory": "NotSet",
+                "targetCollection": "Weapon",
+                "targetWeaponCategory": "Melee",
+                "targetWeaponSubType": "NotSet",
+                "targetWeaponType": "NotSet"
+              },
+              "targetingData": {
+                "effectTargetType": "Creator",
+                "effectTriggerType": "Passive",
+                "hideApplicationFloatie": true,
+                "showInStatusPanel": true,
+                "showInTargetPreview": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chassisNames": [
         "chrPrfMech_pantherBase-001_35",
         "chrPrfMech_blackjackBase-001_45",
         "chrPrfMech_jagermechBase-001_65",
         "chrPrfMech_cataphractBase-001_70",
-        "chrPrfMech_kingcrabBase-001_100"
+        "chrPrfMech_kingcrabBase-001_100",
+        "chrprfmech_bombardbase-001_50",
+        "chrprfmech_hollanderbase-001_35",
+        "chrprfmech_torobase-001_35",
+        "chrprfmech_valkyriehotd-001_30",
+        "chrprfmech_kitfoxbase-001_30",
+        "chrprfmech_lupusbase-001_60",
+        "chrprfmech_madcatbase-001_75",
+        "chrprfmech_maddogbase-001_60",
+        "chrprfmech_nightgyrbase-001_75",
+        "chrPrfMech_vaporeagleBase-001_55",
+        "chrPrfMech_viperbase-001_40"
       ],
       "affinityLevels": [
         {
@@ -588,7 +801,12 @@
     {
       "chassisNames": [
         "chrPrfMech_cyclopsBase-001_90",
-        "chrPrfMech_annihilatorBase-001_100"
+        "chrPrfMech_annihilatorBase-001_100",
+        "chrprfmech_huronwbase-001_50",
+        "chrprfmech_laohubase-001_75",
+        "chrprfmech_ostwarhotd-001_65",
+        "chrprfmech_banebase-001_100",
+        "chrprfmech_huntsmanbase-001_50"
       ],
       "affinityLevels": [
         {
@@ -668,10 +886,14 @@
     },
     {
       "chassisNames": [
-        "chrPrfMech_shadowhawkBase-001",
-        "chrPrfMech_orionBase-001",
         "chrPrfMech_hunchbackBase-001_50",
-        "chrPrfMech_victorBase-001_80"
+        "chrPrfMech_hunchbackiicHotD-001_50",
+        "chrPrfMech_victorBase-001_80",
+        "chrprfmech_firebeebase-001_35",
+        "chrprfmech_hussarbase-001_30",
+        "chrprfmech_arcticwolfbase-001_40",
+        "chrprfmech_dasherbase-001_20",
+        "chrprfmech_incubusbase-001_30"
       ],
       "affinityLevels": [
         {
@@ -719,7 +941,10 @@
     {
       "chassisNames": [
         "chrPrfMech_shadowhawkBase-001_55",
-        "chrPrfMech_dragonBase-001_60"
+        "chrPrfMech_dragonBase-001_60",
+        "chrprfmech_blitzkriegbase-001_50",
+        "chrprfmech_rtcorsair3base-001_95",
+        "chrprfmech_bloodaspbase-001_90"
       ],
       "affinityLevels": [
         {
@@ -769,11 +994,9 @@
         "chrPrfMech_jennerBase-001_35",
         "chrPrfMech_hatchetmanBase-001_45",
         "chrPrfMech_enforcerBase-001_50",
-        "chrPrfMech_zeusBase-001",
-        "chrPrfMech_wolverineBase-001",
-        "chrPrfMech_thunderboltBase-001",
-        "chrPrfMech_kintaroBase-001",
-        "chrPrfMech_enforcerBase-001"
+        "chrprfmech_gargoylebase-001_80",
+        "chrprfmech_hellbringerbase-001_65",
+        "chrprfmech_hellfirebase-001_60"
       ],
       "affinityLevels": [
         {
@@ -821,10 +1044,12 @@
     {
       "chassisNames": [
         "chrPrfMech_orionBase-001_75",
+        "chrprfmech_orioniicbase-001_75",
         "chrPrfMech_stalkerBase-001_85",
-        "chrPrfMech_jennerBase-001",
-        "chrPrfMech_jagermechBase-001",
-        "chrPrfMech_annihilatorBase-001"
+        "chrprfmech_rtcorsair1base-001_95",
+        "chrprfmech_marauderiibase-001_100",
+        "chrPrfMech_stingerHotD-001_20",
+        "chrprfmech_blacklannerbase-001_55"
       ],
       "affinityLevels": [
         {
@@ -873,13 +1098,15 @@
       "chassisNames": [
         "chrPrfMech_vindicatorBase-001_45",
         "chrPrfMech_kintaroBase-001_55",
-        "chrPrfMech_griffinBase-001_55"
+        "chrPrfMech_griffinBase-001_55",
+        "chrprfmech_striderbase-001_40",
+        "chrprfmech_uzielbase-001_50"
       ],
       "affinityLevels": [
         {
           "missionsRequired": 15,
           "levelName": "Resistant",
-          "decription": "Has Improved Resistance to Critical Damage (+50 resistance to criticl damage)",
+          "decription": "Has Improved Resistance to Critical Damage (+50 resistance to critical damage)",
           "effectData": [
             {
               "Description": {
@@ -923,12 +1150,17 @@
         "chrPrfMech_highlander_SLDFBase-001_90",
         "chrPrfMech_bansheeBase-001_95",
         "chrPrfMech_centurionBase-001_50",
-        "chrPrfMech_ravenBase-001",
-        "chrPrfMech_phoenixhawkBase-001",
-        "chrPrfMech_bullsharkBase-001",
-        "chrPrfMech_bansheeBase-001",
-        "chrPrfMech_awesomeBase-001",
-        "chrPrfMech_archerBase-001"
+        "chrPrfMech_archer_BHABase-001_70",
+        "chrprfmech_avatarbase-001_70",
+        "chrprfmech_k2pultbase-001_65",
+        "chrprfmech_rtcorsair5base-001_95",
+        "chrprfmech_helepolisbase-001_75",
+        "chrprfmech_lamentbase-001_65",
+        "chrprfmech_longbowbase-001_85",
+        "chrprfmech_iceferretbase-001_45",
+        "chrprfmech_madcatmkiibase-001_90",
+        "chrprfmech_stormcrowbase-001_55",
+        "chrprfmech_summonerbase-001_70"
       ],
       "affinityLevels": [
         {
@@ -1044,11 +1276,10 @@
         "chrPrfMech_archerBase-001_70",
         "chrPrfMech_awesomeBase-001_80",
         "chrPrfMech_atlasBase-001_100",
-        "chrPrfMech_javelinBase-001",
-        "chrPrfMech_hatchetmanBase-001",
-        "chrPrfMech_grasshopperBase-001",
-        "chrPrfMech_atlasBase-001",
-        "chrPrfMech_assassinBase-001"
+        "chrPrfMech_assassinBase-001_45",
+        "chrprfmech_maulerbase-001_90",
+        "chrPrfMech_thugBase-001_80",
+        "chrprfmech_executionerbase-001_95"
       ],
       "affinityLevels": [
         {
@@ -1097,7 +1328,12 @@
       "chassisNames": [
         "chrPrfMech_blackknightBase-001_75",
         "chrPrfMech_marauderBase-001_75",
-        "chrPrfMech_battlemasterBase-001_85"
+        "chrPrfMech_battlemasterBase-001_85",
+        "chrprfmech_rtcorsair2base-001_95",
+        "chrprfmech_emperorbase-001_90",
+        "chrPrfMech_hauptmannbase-001_95",
+        "chrprfmech_mackiebase-001_100",
+        "chrprfmech_ostsolhotd-001_60"
       ],
       "affinityLevels": [
         {
@@ -1145,7 +1381,7 @@
     {
       "chassisNames": [
         "chrPrfMech_urbanmechBase-001_30",
-        "chrPrfMech_kingcrabBase-001"
+        "chrprfmech_urbiebase-001_30"
       ],
       "affinityLevels": [
         {
